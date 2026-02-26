@@ -106,7 +106,7 @@ btnEditTab.addEventListener('click', () => {
     inputArtist.value = currentViewedTab.artist;
     inputSong.value = currentViewedTab.song;
     inputCategory.value = currentViewedTab.category;
-    inputTab.value = currentViewedTab.content;
+    inputTab.value = currentViewedTab.contenhugt;
 
     showAddView();
     tabCounter.textContent = `${inputTab.value.length} / 5000`;
@@ -438,7 +438,7 @@ function renderList() {
     filteredTabs.forEach(tab => {
         const li = document.createElement('li');
         // Changed p-3 to p-2 for compactness, and flex-col to flex-row items-baseline
-        li.className = "p-2 rounded text-sm lg:text-base text-[#d4af37] font-['Cinzel'] flex flex-row items-baseline gap-2 mb-1 border-b border-[#5a4b3c] hover:bg-[rgba(106,31,31,0.4)] hover:border-l-[3px] hover:border-[#d4af37] transition-all truncate";
+        li.className = "p-2 rounded text-sm lg:text-base text-[#d4af37] font-['Cinzel'] flex flex-row items-baseline gap-2 mb-1 border-b border-[#5a4b3c] hover:bg-[rgba(106,31,31,0.4)] hover:border-l-[3px] hover:border-[#d4af37] transition-all flex-shrink-0";
 
         // Formatted horizontally as: Songname - Artist
         li.innerHTML = `
