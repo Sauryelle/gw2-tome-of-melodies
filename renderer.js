@@ -437,11 +437,13 @@ function renderList() {
     // 3. Render the sorted list
     filteredTabs.forEach(tab => {
         const li = document.createElement('li');
-        li.className = "p-3 rounded text-base lg:text-lg text-[#d4af37] font-['Cinzel'] flex flex-col mb-1 border-b border-[#5a4b3c] hover:bg-[rgba(106,31,31,0.4)] hover:border-l-[3px] hover:border-[#d4af37] transition-all";
+        // Changed p-3 to p-2 for compactness, and flex-col to flex-row items-baseline
+        li.className = "p-2 rounded text-sm lg:text-base text-[#d4af37] font-['Cinzel'] flex flex-row items-baseline gap-2 mb-1 border-b border-[#5a4b3c] hover:bg-[rgba(106,31,31,0.4)] hover:border-l-[3px] hover:border-[#d4af37] transition-all truncate";
 
+        // Formatted horizontally as: Songname - Artist
         li.innerHTML = `
-        ${tab.song}
-        <span class="text-xs lg:text-sm font-['Cormorant_Garamond'] text-[#e6d8c3]">${tab.artist}</span>
+        <span class="truncate">${tab.song}</span>
+        <span class="text-xs lg:text-sm font-['Cormorant_Garamond'] text-[#e6d8c3] truncate flex-shrink-0">- ${tab.artist}</span>
         `;
 
         li.addEventListener('click', () => showReadView(tab));
