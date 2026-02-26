@@ -107,7 +107,7 @@ btnEditTab.addEventListener('click', () => {
     inputArtist.value = currentViewedTab.artist;
     inputSong.value = currentViewedTab.song;
     inputCategory.value = currentViewedTab.category;
-    inputTab.value = currentViewedTab.contenhugt;
+    inputTab.value = currentViewedTab.content;
 
     showAddView();
     tabCounter.textContent = `${inputTab.value.length} / 5000`;
