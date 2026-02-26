@@ -1,7 +1,7 @@
 {
   "name": "tome-of-melodies",
   "productName": "Tome of Melodies",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Sarya's Music Tab Manager",
   "main": "main.js",
   "scripts": {
