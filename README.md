@@ -13,7 +13,7 @@ Companion app to [Sarya's Virtual Piano](https://sauryelle.github.io/gw2-virtual
 
 ## 📥 Download & Install
 
-**[Click here to go to the Releases page]** *(Note: Update this link later!)* and download the version for your operating system:
+**[Click here to go to the Releases page](https://github.com/Sauryelle/gw2-tome-of-melodies/releases/tag/v1.0.0)** and download the version for your operating system:
 
 * **Windows Users:** Download `Tome of Melodies 1.0.0.exe`. 
   * *Note: Because this is an indie application, Windows SmartScreen may show a blue "Windows protected your PC" warning. Simply click **More info** -> **Run anyway**.*
