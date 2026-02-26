@@ -28,6 +28,7 @@ const displayTab = document.getElementById('display-tab');
 const toggleTop = document.getElementById('toggle-top');
 const btnFontUp = document.getElementById('btn-font-up');
 const btnFontDown = document.getElementById('btn-font-down');
+const btnPurge = document.getElementById('btn-purge');
 
 const tabList = document.getElementById('tab-list');
 const searchBar = document.getElementById('search-bar');
@@ -110,6 +111,35 @@ btnEditTab.addEventListener('click', () => {
 
     showAddView();
     tabCounter.textContent = `${inputTab.value.length} / 5000`;
+});
+
+// Quick Purge with Double-Click Safety (No Freezing!)
+let purgeTimeout;
+btnPurge.addEventListener('click', () => {
+    // If the button says the default text, change it to a warning
+    if (btnPurge.textContent.includes("Purge All")) {
+        btnPurge.textContent = "⚠ ARE YOU SURE? CLICK AGAIN TO BURN TOME";
+        btnPurge.style.color = "#ff5555"; // Turn it bright red
+
+        // Reset back to normal after 3 seconds if they don't click again
+        purgeTimeout = setTimeout(() => {
+            btnPurge.textContent = "⚠ Purge All Melodies";
+            btnPurge.style.color = ""; // Remove the red
+        }, 3000);
+    } else {
+        // Second click within 3 seconds: Actually purge!
+        clearTimeout(purgeTimeout);
+        tabs = [];
+        saveTabs();
+        updateFilters();
+        renderList();
+
+        btnShowAdd.click();
+
+        // Reset button state
+        btnPurge.textContent = "⚠ Purge All Melodies";
+        btnPurge.style.color = "";
+    }
 });
 
 // Click "Delete Tab" in Read View (Double-click safety)
