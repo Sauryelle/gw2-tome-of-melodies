@@ -1,0 +1,38 @@
+{
+  "name": "tome-of-melodies",
+  "productName": "Tome of Melodies",
+  "version": "1.0.1",
+  "description": "Sarya's Music Tab Manager",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist:linux": "electron-builder --linux",
+    "dist:win": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.sarya.tomeofmelodies",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Sauryelle",
+        "repo": "gw2-tome-of-melodies"
+      }
+    ],
+    "linux": {
+      "target": "AppImage",
+      "icon": "build/icon.png"
+    },
+    "win": {
+      "target": "portable",
+      "icon": "build/icon.png",
+      "signAndEditExecutable": false
+    }
+  },
+  "devDependencies": {
+    "electron": "^29.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.3"
+  }
+}
